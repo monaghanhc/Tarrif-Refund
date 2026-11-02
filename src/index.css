@@ -1,0 +1,431 @@
+:root {
+  --ink: #0e2233;
+  --muted: #4b5f70;
+  --faint: #7a8a98;
+  --line: #dfe6ec;
+  --bg: #ffffff;
+  --panel: #f5f8fa;
+  --brand: #0f5c4a;
+  --brand-ink: #ffffff;
+  --brand-soft: #e6f2ee;
+  --urgent: #b42318;
+  --urgent-soft: #fdecea;
+  --warn: #8a5a00;
+  --warn-soft: #fff4dc;
+  --radius: 14px;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: var(--brand);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+p {
+  margin: 0;
+}
+
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.logo img {
+  width: 28px;
+  height: 28px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  font-size: 0.95rem;
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.hero {
+  padding: 48px 0 32px;
+  display: grid;
+  gap: 18px;
+  max-width: 760px;
+}
+
+.lead {
+  font-size: 1.15rem;
+  color: var(--muted);
+}
+
+.trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.trust span::before {
+  content: '✓ ';
+  color: var(--brand);
+  font-weight: 700;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.08s ease, background 0.15s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: var(--brand);
+  color: var(--brand-ink);
+}
+
+.btn-primary:hover {
+  background: #0b4a3b;
+}
+
+.btn-quiet {
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+
+.btn-link {
+  background: none;
+  color: var(--brand);
+  padding: 12px 6px;
+}
+
+.drop {
+  border: 2px dashed #b9cbd6;
+  border-radius: var(--radius);
+  background: var(--panel);
+  padding: 36px 24px;
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  text-align: center;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.drop.over {
+  border-color: var(--brand);
+  background: var(--brand-soft);
+}
+
+.drop .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.section {
+  padding: 48px 0;
+  display: grid;
+  gap: 20px;
+}
+
+.section + .section {
+  border-top: 1px solid var(--line);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.step {
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: 18px;
+  display: grid;
+  gap: 6px;
+  align-content: start;
+}
+
+.step b {
+  color: var(--brand);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.total {
+  display: grid;
+  gap: 4px;
+}
+
+.total .amount {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  color: var(--brand);
+  letter-spacing: -0.02em;
+}
+
+.callout {
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  display: grid;
+  gap: 6px;
+}
+
+.callout.urgent {
+  background: var(--urgent-soft);
+  color: #5c1010;
+}
+
+.callout.warn {
+  background: var(--warn-soft);
+  color: #4d3300;
+}
+
+.callout.info {
+  background: var(--panel);
+}
+
+.buckets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 14px;
+}
+
+.bucket {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.bucket.primary {
+  border-color: var(--brand);
+  border-width: 2px;
+}
+
+.bucket .num {
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+.bucket ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  display: grid;
+  gap: 4px;
+}
+
+.pill {
+  display: inline-block;
+  justify-self: start;
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.pill.cape {
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+
+.pill.protest {
+  background: var(--warn-soft);
+  color: var(--warn);
+}
+
+.pill.final,
+.pill.ineligible {
+  background: #eef1f4;
+  color: var(--muted);
+}
+
+.pill.check {
+  background: #e9f0fb;
+  color: #1f4f99;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 0.88rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.92rem;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+th {
+  background: var(--panel);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+td.num,
+th.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+code {
+  background: var(--panel);
+  border-radius: 6px;
+  padding: 1px 6px;
+  font-size: 0.9em;
+}
+
+ol.guide {
+  margin: 0;
+  padding-left: 22px;
+  display: grid;
+  gap: 10px;
+}
+
+details {
+  border-bottom: 1px solid var(--line);
+  padding: 14px 0;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+details p,
+details ul {
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 32px 0 48px;
+  color: var(--faint);
+  font-size: 0.85rem;
+  display: grid;
+  gap: 8px;
+}
+
+.fade-in {
+  animation: fade-in 0.35s ease both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    animation: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-links {
+    display: none;
+  }
+}
